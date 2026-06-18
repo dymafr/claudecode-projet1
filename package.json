@@ -1,0 +1,10 @@
+{
+  "name": "convertisseur-temperature",
+  "version": "1.0.0",
+  "description": "Mini projet pour découvrir Claude Code avec un convertisseur de température.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "dev": "node server.js"
+  }
+}

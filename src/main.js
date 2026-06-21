@@ -8,13 +8,7 @@ const boutonConvertir = document.querySelector('#convertir');
 const paragrapheResultat = document.querySelector('#resultat');
 
 function afficherConversion() {
-  const saisie = champTemperature.value.trim();
-  const temperatureCelsius = Number(saisie);
-
-  if (saisie === '' || Number.isNaN(temperatureCelsius)) {
-    paragrapheResultat.textContent = 'Veuillez saisir une température valide.';
-    return;
-  }
+  const temperatureCelsius = Number(champTemperature.value);
 
   const temperatureFahrenheit = arrondirTemperature(
     convertirCelsiusEnFahrenheit(temperatureCelsius)

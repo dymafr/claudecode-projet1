@@ -15,6 +15,13 @@ test('convertit les degrés Celsius en degrés Fahrenheit', () => {
 test('convertit les degrés Fahrenheit en degrés Celsius', () => {
   assert.equal(convertirFahrenheitEnCelsius(32), 0);
   assert.equal(convertirFahrenheitEnCelsius(212), 100);
+  assert.equal(convertirFahrenheitEnCelsius(68), 20);
+  assert.equal(convertirFahrenheitEnCelsius(-40), -40);
+});
+
+test('convertit et arrondit une température Fahrenheit comme dans l\'interface', () => {
+  assert.equal(arrondirTemperature(convertirFahrenheitEnCelsius(100)), 37.8);
+  assert.equal(arrondirTemperature(convertirFahrenheitEnCelsius(0)), -17.8);
 });
 
 test('arrondit une température à un chiffre après la virgule', () => {

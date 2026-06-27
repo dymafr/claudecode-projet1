@@ -4,6 +4,92 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Convertisseur de température</title>
+    <style>
+      :root {
+        --bleu: #2563eb;
+        --bleu-fonce: #1e40af;
+        --bleu-clair: #eff6ff;
+        --bleu-bordure: #bfdbfe;
+      }
+
+      body {
+        font-family: system-ui, sans-serif;
+        background-color: var(--bleu-clair);
+        color: #1e293b;
+        margin: 0;
+        padding: 2rem 1rem;
+      }
+
+      main {
+        max-width: 28rem;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border: 1px solid var(--bleu-bordure);
+        border-top: 4px solid var(--bleu);
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem 2rem;
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+      }
+
+      h1 {
+        color: var(--bleu-fonce);
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      label {
+        display: block;
+        margin-top: 1.25rem;
+        margin-bottom: 0.375rem;
+        font-weight: 600;
+        color: var(--bleu-fonce);
+      }
+
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.625rem 0.75rem;
+        font-size: 1rem;
+        border: 1px solid var(--bleu-bordure);
+        border-radius: 0.5rem;
+        outline: none;
+      }
+
+      input:focus {
+        border-color: var(--bleu);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+      }
+
+      button {
+        margin-top: 0.875rem;
+        padding: 0.625rem 1.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ffffff;
+        background-color: var(--bleu);
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+      }
+
+      button:hover {
+        background-color: var(--bleu-fonce);
+      }
+
+      button:active {
+        transform: translateY(1px);
+      }
+
+      p[id^="resultat"] {
+        margin-top: 1rem;
+        padding: 0.75rem 1rem;
+        background-color: var(--bleu-clair);
+        border-left: 4px solid var(--bleu);
+        border-radius: 0.375rem;
+        font-weight: 500;
+      }
+    </style>
   </head>
   <body>
     <main>
@@ -15,6 +101,13 @@
       <button id="convertir">Convertir</button>
 
       <p id="resultat">20 °C correspondent à 68 °F.</p>
+
+      <label for="temperature-fahrenheit">Température en Fahrenheit</label>
+      <input id="temperature-fahrenheit" value="68" />
+
+      <button id="convertir-fahrenheit">Convertir</button>
+
+      <p id="resultat-fahrenheit">68 °F correspondent à 20 °C.</p>
     </main>
 
     <script type="module" src="./src/main.js"></script>

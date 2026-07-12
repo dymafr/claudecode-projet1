@@ -14,13 +14,13 @@ Ce projet sert de support simple pour découvrir Claude Code.
 Lancer les tests :
 
 ```bash
-pnpm test
+npm test
 ```
 
 Lancer le serveur de développement :
 
 ```bash
-pnpm run dev
+npm run dev
 ```
 
 Ouvrir ensuite :
@@ -28,4 +28,3 @@ Ouvrir ensuite :
 ```bash
 http://localhost:5173
 ```
-

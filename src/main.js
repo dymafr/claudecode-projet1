@@ -1,8 +1,11 @@
 import {
   convertirCelsiusEnFahrenheit,
   convertirFahrenheitEnCelsius,
-  arrondirTemperature
+  arrondirTemperature,
+  lireTemperature
 } from './conversion.js';
+
+const MESSAGE_ERREUR = 'Veuillez saisir une température valide.';
 
 const champTemperature = document.querySelector('#temperature');
 const boutonConvertir = document.querySelector('#convertir');
@@ -13,7 +16,12 @@ const boutonConvertirFahrenheit = document.querySelector('#convertir-fahrenheit'
 const paragrapheResultatFahrenheit = document.querySelector('#resultat-fahrenheit');
 
 function afficherConversion() {
-  const temperatureCelsius = Number(champTemperature.value);
+  const temperatureCelsius = lireTemperature(champTemperature.value);
+
+  if (temperatureCelsius === null) {
+    paragrapheResultat.textContent = MESSAGE_ERREUR;
+    return;
+  }
 
   const temperatureFahrenheit = arrondirTemperature(
     convertirCelsiusEnFahrenheit(temperatureCelsius)
@@ -24,7 +32,12 @@ function afficherConversion() {
 }
 
 function afficherConversionFahrenheit() {
-  const temperatureFahrenheit = Number(champTemperatureFahrenheit.value);
+  const temperatureFahrenheit = lireTemperature(champTemperatureFahrenheit.value);
+
+  if (temperatureFahrenheit === null) {
+    paragrapheResultatFahrenheit.textContent = MESSAGE_ERREUR;
+    return;
+  }
 
   const temperatureCelsius = arrondirTemperature(
     convertirFahrenheitEnCelsius(temperatureFahrenheit)

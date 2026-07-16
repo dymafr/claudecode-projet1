@@ -9,3 +9,13 @@ export function convertirFahrenheitEnCelsius(fahrenheit) {
 export function arrondirTemperature(valeur) {
   return Math.round(valeur * 10) / 10;
 }
+
+export function lireTemperature(texte) {
+  if (typeof texte !== 'string' || texte.trim() === '') {
+    return null;
+  }
+
+  const valeur = Number(texte);
+
+  return Number.isFinite(valeur) ? valeur : null;
+}

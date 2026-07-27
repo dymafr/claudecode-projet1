@@ -15,7 +15,8 @@ export function lireTemperature(texte) {
     return null;
   }
 
-  const valeur = Number(texte);
+  const texteNormalise = texte.trim().replace(',', '.');
+  const valeur = Number(texteNormalise);
 
   return Number.isFinite(valeur) ? valeur : null;
 }

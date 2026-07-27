@@ -37,6 +37,13 @@ test('lit une température valide depuis une saisie texte', () => {
   assert.equal(lireTemperature('  20  '), 20);
 });
 
+test('accepte la virgule comme séparateur décimal', () => {
+  assert.equal(lireTemperature('12,5'), 12.5);
+  assert.equal(lireTemperature('-3,2'), -3.2);
+  assert.equal(lireTemperature('12.5'), 12.5);
+  assert.equal(lireTemperature('-3.2'), -3.2);
+});
+
 test('rejette une saisie vide sans la convertir en 0', () => {
   assert.equal(lireTemperature(''), null);
   assert.equal(lireTemperature('   '), null);
